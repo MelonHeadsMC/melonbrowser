@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MelonBrowser</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://th.bing.com/th/id/R.9c9e32f43441e347a3f028c79019564b?rik=R360mttE%2fu6vbQ&pid=ImgRaw&r=0" type="image/png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GS9H01G98"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1GS9H01G98');
+  </script>
+</head>
+<body>
+  <!-- Settings Button -->
+  <button id="settingsBtn" class="settings-btn">⚙️</button>
+
+  <!-- Settings Panel -->
+  <div id="settingsPanel" class="settings-panel">
+    <h2>Settings</h2>
+    
+    <label>
+      <input type="checkbox" id="antiCloseToggle" checked>
+      Anti-Close (Prevent closing MelonBrowser)
+    </label>
+
+    <h3>Custom Buttons</h3>
+
+    <label></label>
+    <input type="text" id="customName1" placeholder="Custom 1 Name">
+    <input type="text" id="customLink1" placeholder="Custom 1 URL">
+
+    <label></label>
+    <input type="text" id="customName2" placeholder="Custom 2 Name">
+    <input type="text" id="customLink2" placeholder="Custom 2 URL">
+
+    <label></label>
+    <input type="text" id="customName3" placeholder="Custom 3 Name">
+    <input type="text" id="customLink3" placeholder="Custom 3 URL">
+
+    <button id="saveSettingsBtn">Save</button>
+    <button id="closeSettingsBtn">Close</button>
+  </div>
+
+  <canvas id="pixelCanvas"></canvas>
+  <h1>MelonBrowser</h1>
+
+  <div class="bar">
+    <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw" class="logo" alt="Logo">
+    <input type="text" id="search" placeholder="Enter URL or search..." onkeyup="showSuggestions(this.value)" onkeypress="handleKeyPress(event)">
+    <button id="openNewTabButton">Open</button>
+    <div id="suggestions"></div>
+  </div>
+
+  <div class="custom-buttons">
+    <button id="customBtn1">Custom 1</button>
+    <button id="customBtn2">Custom 2</button>
+    <button id="customBtn3">Custom 3</button>
+  </div>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
