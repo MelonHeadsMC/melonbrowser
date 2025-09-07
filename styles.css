@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: monospace;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Search bar */
+.bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  width: 400px;
+  margin-bottom: 10px;
+  position: relative;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bar:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+button {
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.custom-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Suggestions box */
+#suggestions {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-top: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 5;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  overflow: hidden;
+}
+
+#suggestions div {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#suggestions div:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Settings button */
+.settings-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 50;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.3s;
+}
+
+.settings-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Settings panel */
+.settings-panel {
+  position: fixed;
+  top: 20px;
+  right: -350px; /* hidden by default */
+  width: 320px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  z-index: 50;
+  transition: right 0.4s ease, opacity 0.4s ease;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  opacity: 0; /* hidden */
+}
+
+.settings-panel.open {
+  right: 20px; /* slide in */
+  opacity: 1;  /* show */
+}
+
+
+.settings-panel i
